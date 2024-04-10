@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+        <script>
+            function handleRadioButtonChange() {
+                var employeeRadio = document.getElementById("employee");
+                var managerRadio = document.getElementById("manager");
+                var hrRadio = document.getElementById("hr");
+                var adminRadio = document.getElementById("admin");
+
+                employeeradio.disabled = true;
+
+                if (employeeRadio.checked) {
+                    managerRadio.disabled = true;
+                    hrRadio.disabled = true;
+                    adminRadio.disabled = true;
+                } else {
+                    managerRadio.disabled = false;
+                    hrRadio.disabled = false;
+                    adminRadio.disabled = false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p><b>Welcome to Employee Management Web Application.</b></p>
+        <form action="newLoginServ" method="POST">
+            <table>
+                <tr>
+
+                    <td><input type="radio" id="employee" name="role" value="employee" onchange="handleRadioButtonChange()">Employee</td>
+
+                    <td><input type="radio" id="manager" name="role" value="manager" onchange="handleRadioButtonChange()">Manager</td>
+
+                    <td><input type="radio" id="hr" name="role" value="hr" onchange="handleRadioButtonChange()">HR<td>
+
+                    <td><input type="radio" id="admin" name="role" value="admin" onchange="handleRadioButtonChange()">Administrator</td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="LOGIN"></td>
+                </tr>
+            </table>
+
+        </form>
+    </body>
+</html>
